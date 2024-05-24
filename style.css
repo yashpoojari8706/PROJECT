@@ -44,12 +44,16 @@ body {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
+.dropdown-content a:hover {
+    color: #ffffff; 
+    background-color: #555; 
+}
 /* Style the right side buttons */
 .right-buttons {
     display: flex;
