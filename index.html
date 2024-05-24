@@ -4,12 +4,12 @@
   <title>MoneyMind</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header class="header-content">
-      <span class="menu-icon" onclick="openNav()">&#9776;</span>
-      <h1>Welcome to MoneyMind</h1>
+    <span class="menu-icon" onclick="openNav()">&#9776;</span>
+    <h1>Welcome to MoneyMind</h1>
   </header>
 
   <nav class="sidenav" id="mySidenav">
@@ -19,7 +19,30 @@
     <a href="#">Clients</a>
     <a href="#">Contact</a>
   </nav>
-
+  
+  <div class="slider">
+    <div class="slides">
+      <div class="slide">
+        <img src="img10.jpg" alt="Image 1">
+        <div class="text">Text for Image 1</div>
+      </div>
+      <div class="slide">
+        <img src="img5.jpg" alt="Image 2">
+        <div class="text">Text for Image 2</div>
+      </div>
+      <div class="slide">
+        <img src="a.jpg" alt="Image 3">
+        <div class="text">Text for Image 3</div>
+      </div>
+    </div>
+    <div class="slider-controls">
+        <button class="prev" onclick="plusSlides(-1)"><i class="fas fa-chevron-left"></i></button>
+        <ul class="dots"></ul>
+        <button class="next" onclick="plusSlides(1)"><i class="fas fa-chevron-right"></i></button>
+        <button class="prev" onclick="plusSlides(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="pause" onclick="togglePause()"><i class="fas fa-pause"></i></button>
+        <button class="next" onclick="plusSlides(1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
   <main>
     <p>Some content..</p>
     <p>Some content..</p>
@@ -45,34 +68,43 @@
     <p>Some content..</p>
     <p>Some content..</p>
     <p>Some content..</p>
+    <p>Some content..</p>
+  </main>
 
-</main>
-<div class="footer">
+  <div class="footer">
+    <div class="header-left"><img src="logos.png" width="110" height="100" alt="Logo"></div>
     <div class="footer-parts">
-        <div class="footer-parts-h4">About Us</div>
+        <div class="footer-parts-h4" style="text-align: center;">About Us</div>
         <div class="footer-parts-p">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Veniam est laboriosam consectetur ut animi dolores error, provident labore repudiandae voluptates fugit,
-        tempore vitae ad recusandae mollitia odio nesciunt iusto numquam?
+        Money Mind is an application used for demonstration purposes.<br>
+        With the help of money mind we can demonstrate the working of various applications and webpages that we have created.
         </div>
     </div>
     <div class="footer-parts">
-        <div style="padding-left:100px;">
+        <div style="padding-left:90px;text-align: center;">
             <div class="footer-parts-h4">Our Links</div>
         </div>
-        <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Clients</a></li>
-            <li><a href="#">Contact</a></li>
+        <ul style="text-align: center;">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Download</a></li>
+        </ul>
+    </div>
+    <div class="contact-info">
+        <div style="padding-left:100px;text-align: center; ">Contact Info<br></div>
+        <ul style="text-align: center; font-size: 15px;">
+            <br><li>Name: xyz</li>
+            <li>Address: xyz</li>
+            <li>Number: +91xyz</li>
+            <li>Email: xyz@gmail.com</li>
         </ul>
     </div>
     <div class="footer-parts">
-        <div class="footer-parts-h4">Subscribe &amp; Social Links</div>
+        <div class="footer-parts-h4"><br><br><br>Subscribe &amp; Social Links</div>
         <form action="" method="post">
             <input type="text" class="form" placeholder="example@mail.com">
             <button type="submit" name="submit" class="subscribe">Subscribe</button>
-        
         <div class="social-links">
             <ul>
                 <li><a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a></li>
@@ -91,6 +123,7 @@
 </div>
 <!------- End Footer --------->
 <div class="clearfix"></div>
+</div>
 
 </body>
 </html>
