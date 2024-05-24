@@ -384,6 +384,7 @@ body {
   .image-container {
     width: 70%; /* Adjust the width as needed */
     position: relative;
+    margin-right: 90px;
     margin-bottom: 20px;
     display: flex; /* Make container flex */
     align-items: center; /* Align items vertically */
