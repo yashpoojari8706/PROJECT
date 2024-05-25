@@ -88,6 +88,7 @@ body {
     border: 1px solid #ccc; /* Light Grey border */
 }
 
+
 /* Adjust the margin for search input */
 .search-input {
     margin-left: 10px;
@@ -377,27 +378,57 @@ body {
 }
 
 .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.feature {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Aligns items to the right */
-  }
-  .image-container {
-    width: 70%; /* Adjust the width as needed */
-    position: relative;
-    margin-right: 90px;
-    margin-bottom: 20px;
-    display: flex; /* Make container flex */
-    align-items: center; /* Align items vertically */
-  }
-  .image-container img {
-    width: 70%; /* Adjust image width */
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.feature.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature .col-md-7 {
+    width: 70%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.feature .col-md-5 {
+    width: 30%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.image {
+    width: 100%;
     height: auto;
-    display: block;
-    margin-right: 70px; /* Add margin to separate image and text */
-  }
-  .text-box {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px;
-    box-sizing: border-box;
-  }
+}
+
+.heading {
+    font-size: 24px;
+}
+
+.content {
+    font-size: 16px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.spacer {
+    height: 300px; /* Increased height to add more space between features */
+}
+
+.space {
+    height: 200px; /* Increased height to add more space between features */
+}
