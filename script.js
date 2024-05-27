@@ -1,6 +1,6 @@
 let slideIndex = 0;
 let slideInterval;
-let slides = document.getElementsByClassName("slide");
+const slides = document.getElementsByClassName("slide");
 
 function plusSlides(n) {
     let newSlideIndex = slideIndex + n;
@@ -14,11 +14,12 @@ function plusSlides(n) {
     }
 
     showSlides();
+    resetSlideShow(); // Reset the slideshow timer after clicking next/prev
 }
 
 function showSlides() {
-    let slidePosition = -slideIndex * 33.333; 
-    document.querySelector(".slides").style.transform = `translateX(${slidePosition}%)`; 
+    const slidePosition = -slideIndex * 33.333;
+    document.querySelector(".slides").style.transform = `translateX(${slidePosition}%)`;
 
     updateDots();
 }
@@ -26,17 +27,22 @@ function showSlides() {
 function startSlideShow() {
     slideInterval = setInterval(() => {
         plusSlides(1);
-    }, 5000); 
+    }, 5000);
 }
 
 function stopSlideShow() {
-    clearInterval(slideInterval); 
+    clearInterval(slideInterval);
+}
+
+function resetSlideShow() {
+    stopSlideShow();
+    startSlideShow();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    showSlides(); 
-    startSlideShow(); 
-    createDots(); 
+    showSlides();
+    startSlideShow();
+    createDots();
 });
 
 let isPaused = false;
@@ -45,21 +51,21 @@ function togglePause() {
     if (isPaused) {
         isPaused = false;
         startSlideShow();
-        document.querySelector(".pause").innerHTML = '<i class="fas fa-pause"></i>'; 
+        document.querySelector(".pause").innerHTML = '<i class="fas fa-pause"></i>';
     } else {
         isPaused = true;
-        stopSlideShow(); 
-        document.querySelector(".pause").innerHTML = '<i class="fas fa-play"></i>'; 
+        stopSlideShow();
+        document.querySelector(".pause").innerHTML = '<i class="fas fa-play"></i>';
     }
 }
 
 function createDots() {
-    let dotsContainer = document.querySelector(".dots");
+    const dotsContainer = document.querySelector(".dots");
 
     dotsContainer.innerHTML = '';
 
     for (let i = 0; i < slides.length; i++) {
-        let dot = document.createElement("span");
+        const dot = document.createElement("span");
         dot.classList.add("dot");
         dot.setAttribute("onclick", `currentSlide(${i + 1})`);
         dotsContainer.appendChild(dot);
@@ -69,7 +75,7 @@ function createDots() {
 }
 
 function updateDots() {
-    let dots = document.querySelectorAll('.dot');
+    const dots = document.querySelectorAll('.dot');
     for (let i = 0; i < dots.length; i++) {
         if (i === slideIndex) {
             dots[i].classList.add('active');
@@ -82,6 +88,7 @@ function updateDots() {
 function currentSlide(n) {
     slideIndex = n - 1;
     showSlides();
+    resetSlideShow(); // Reset the slideshow timer after clicking a dot
 }
 document.addEventListener("DOMContentLoaded", function() {
     const observerOptions = {
@@ -104,3 +111,4 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(feature);
     });
 });
+
