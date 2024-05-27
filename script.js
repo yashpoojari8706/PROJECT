@@ -14,7 +14,7 @@ function plusSlides(n) {
     }
 
     showSlides();
-    resetSlideShow(); // Reset the slideshow timer after clicking next/prev
+    resetSlideShow(); 
 }
 
 function showSlides() {
@@ -88,7 +88,7 @@ function updateDots() {
 function currentSlide(n) {
     slideIndex = n - 1;
     showSlides();
-    resetSlideShow(); // Reset the slideshow timer after clicking a dot
+    resetSlideShow(); 
 }
 document.addEventListener("DOMContentLoaded", function() {
     const observerOptions = {
@@ -111,4 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(feature);
     });
 });
-
+function toggleSearchBar() {
+    var searchBar = document.querySelector('.search-bar-container');
+    searchBar.classList.toggle('active');
+}

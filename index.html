@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="script.js"></script>
 </head>
-<body>
+<body style="background-image: url('a1.png');">
 
     <div class="navbar">
         <!-- Logo and Website Name -->
@@ -61,8 +61,11 @@
     <!-- Right side buttons -->
     <div class="right-buttons">
         <button class="login-button">Login</button>
-        <button class="search-button"></button>
-        <input type="text" class="search-input" placeholder="Search...">
+        <button class="search-button" onclick="toggleSearchBar()"><i class="fas fa-search"></i></button>
+        <div class="search-bar-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="close-search-button" onclick="toggleSearchBar()">&times;</button>
+        </div>
     </div>
 </div>
 
@@ -100,13 +103,13 @@
             </div>
         </div>
         <div class="col-md-5">
-            <img src="photos/moneymindimg1.jpeg" class="image" alt="First Feature Image">
+            <img src="image1.png" class="image" alt="First Feature Image">
         </div>
     </div>
     <div class="space"></div> 
     <div class="row feature">
         <div class="col-md-5">
-            <img src="photos/moneymindimg2.jpeg" class="image" alt="Second Feature Image">
+            <img src="image2.png" class="image" alt="Second Feature Image">
         </div>
         <div class="col-md-7">
             <div class="text-center">
@@ -124,7 +127,7 @@
             </div>
         </div>
         <div class="col-md-5">
-            <img src="photos/moneymindimg3.jpeg" class="image" alt="Third Feature Image">
+            <img src="image3.png" class="image" alt="Third Feature Image">
         </div>
     </div>
     <div class="space"></div> 
