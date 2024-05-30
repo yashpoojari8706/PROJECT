@@ -32,12 +32,15 @@ body {
 }
 
 .navbar {
+    position: fixed;
+    top: 0; /* Adjust to 'bottom: 0' if you want it at the bottom */
+    width: 100%;
     overflow: visible;
     background-color: rgb(29, 53, 87);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 1px 20px; /* Decreased padding top and bottom */    z-index: 1000; /* Ensure the navbar stays on top of other content */
 }
 
 .left-buttons {
@@ -99,6 +102,7 @@ button:hover::after {
 .right-buttons {
     display: flex;
     align-items: center;
+    margin-right: 50px;
 }
 .login-button,.search-button{
     display: flex;
@@ -188,6 +192,7 @@ button:hover::after {
     font-size: 15px;
     padding: 0px 25px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',Verdana, sans-serif;
+
 }
 
 .footer-parts-h4 {
@@ -503,11 +508,51 @@ button:hover::after {
 }
 
 .space {
-    height: 110px; 
+    height: 160px; 
+}
+.spacer {
+    height: 100px; 
 }
 
 .background-container {
     background-image: url('a1.png');
     background-size: cover; 
     background-repeat: no-repeat; 
+}
+.footer .subscribe-form {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  position: relative; /* Set the position to relative */
+}
+
+.footer .subscribe-form .form {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer .subscribe-form .subscribe {
+  right: -90px;  /* Adjust the right position as needed */
+  top: calc(50% - 16px); /* Adjust the top position to center vertically */
+  margin-top: 16px;
+}
+
+/* Adjust the position for smaller screen sizes */
+@media (max-width: 768px) {
+  .footer .subscribe-form .subscribe {
+      margin-top: 5px;
+      right: -90px; /* Adjust the right position as needed for smaller screens */
+      top: calc(100% - 32px); /* Adjust the top position for smaller screens */
+  }
+}
+
+
+
+/* Adjust the layout for smaller screen sizes */
+@media (max-width: 768px) {
+  .footer-parts .subscribe-form,
+  .footer-parts .social-links {
+      flex-direction: row; /* Change to row layout for smaller screens */
+      justify-content: center; /* Horizontally center the items */
+  }
 }
